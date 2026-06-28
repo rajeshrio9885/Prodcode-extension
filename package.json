@@ -1,6 +1,6 @@
 {
   "name": "runtime-safety-guard",
-  "displayName": "Runtime Safety Guard",
+  "displayName": "Guardian JS",
   "description": "Live-highlights crash-prone JavaScript patterns on the lines you change: unguarded null/undefined access, hanging promises/callbacks, forEach-async, unsafe iteration and more.",
   "version": "0.1.0",
   "publisher": "RajeshJ",
@@ -8,12 +8,23 @@
   "engines": {
     "vscode": "^1.75.0"
   },
-  "categories": ["Linters", "Programming Languages"],
-  "keywords": ["lint", "null safety", "undefined", "promise", "callback", "javascript"],
+  "categories": [
+    "Linters",
+    "Programming Languages"
+  ],
+  "keywords": [
+    "lint",
+    "null safety",
+    "undefined",
+    "promise",
+    "callback",
+    "javascript"
+  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/REPLACE_WITH_YOUR_USER/runtime-safety-guard"
+    "url": "https://github.com/rajeshrio9885/Prodcode-extension.git"
   },
+  "icon": "prodcode.png",
   "activationEvents": [
     "onLanguage:javascript",
     "onLanguage:javascriptreact"
@@ -30,7 +41,12 @@
         },
         "runtimeSafety.severity": {
           "type": "string",
-          "enum": ["error", "warning", "information", "hint"],
+          "enum": [
+            "error",
+            "warning",
+            "information",
+            "hint"
+          ],
           "default": "warning",
           "description": "Severity used for all diagnostics."
         },
@@ -56,12 +72,12 @@
     "smoke": "node test/smoke.js"
   },
   "dependencies": {
-    "espree": "^9.6.1",
-    "diff": "^5.2.0"
+    "diff": "^5.2.0",
+    "espree": "^9.6.1"
   },
   "devDependencies": {
     "@types/vscode": "^1.75.0",
-    "esbuild": "^0.21.5",
-    "@vscode/vsce": "^2.27.0"
+    "@vscode/vsce": "^2.32.0",
+    "esbuild": "^0.21.5"
   }
 }
