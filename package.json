@@ -1,0 +1,67 @@
+{
+  "name": "runtime-safety-guard",
+  "displayName": "Runtime Safety Guard",
+  "description": "Live-highlights crash-prone JavaScript patterns on the lines you change: unguarded null/undefined access, hanging promises/callbacks, forEach-async, unsafe iteration and more.",
+  "version": "0.1.0",
+  "publisher": "RajeshJ",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": ["Linters", "Programming Languages"],
+  "keywords": ["lint", "null safety", "undefined", "promise", "callback", "javascript"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/REPLACE_WITH_YOUR_USER/runtime-safety-guard"
+  },
+  "activationEvents": [
+    "onLanguage:javascript",
+    "onLanguage:javascriptreact"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Runtime Safety Guard",
+      "properties": {
+        "runtimeSafety.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable Runtime Safety Guard diagnostics."
+        },
+        "runtimeSafety.severity": {
+          "type": "string",
+          "enum": ["error", "warning", "information", "hint"],
+          "default": "warning",
+          "description": "Severity used for all diagnostics."
+        },
+        "runtimeSafety.rules.nullSafety": {
+          "type": "boolean",
+          "default": true,
+          "description": "Unguarded null/undefined property/method access (#1, #2, #22, #24, #25)."
+        },
+        "runtimeSafety.rules.patterns": {
+          "type": "boolean",
+          "default": true,
+          "description": "Correctness patterns: JSON.parse, forEach-async, promise/callback hang, await without try, missing return, for...of nullable, destructure null (#5, #7, #10, #11, #12, #19, #26, #35)."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "build": "node esbuild.js",
+    "watch": "node esbuild.js --watch",
+    "vscode:prepublish": "node esbuild.js --production",
+    "package": "vsce package",
+    "publish": "vsce publish",
+    "smoke": "node test/smoke.js"
+  },
+  "dependencies": {
+    "espree": "^9.6.1",
+    "diff": "^5.2.0"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.75.0",
+    "esbuild": "^0.21.5",
+    "@vscode/vsce": "^2.27.0"
+  }
+}
