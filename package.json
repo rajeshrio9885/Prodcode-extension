@@ -1,5 +1,5 @@
 {
-  "name": "Guardian JS",
+  "name": "Guardian-JS",
   "displayName": "Guardian JS",
   "description": "Live-highlights crash-prone JavaScript patterns on the lines you change: unguarded null/undefined access, hanging promises/callbacks, forEach-async, unsafe iteration and more.",
   "version": "0.1.0",
