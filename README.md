@@ -1,4 +1,4 @@
-# Guardian JS
+# Prod Guardian
 
 Live, in-editor highlighting of **crash-prone JavaScript patterns** — the bugs that throw `TypeError: Cannot read properties of undefined`, hang requests on un-settled promises/callbacks, or send duplicate HTTP responses.
 
