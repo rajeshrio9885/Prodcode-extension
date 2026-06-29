@@ -1,6 +1,6 @@
 {
-  "name": "Guardian-JS",
-  "displayName": "Guardian JS",
+  "name": "Prod-Guardian",
+  "displayName": "Prod Guardian",
   "description": "Live-highlights crash-prone JavaScript patterns on the lines you change: unguarded null/undefined access, hanging promises/callbacks, forEach-async, unsafe iteration and more.",
   "version": "0.1.0",
   "publisher": "RajeshJ",
@@ -32,12 +32,12 @@
   "main": "./dist/extension.js",
   "contributes": {
     "configuration": {
-      "title": "Runtime Safety Guard",
+      "title": "Prod Guardian",
       "properties": {
         "runtimeSafety.enable": {
           "type": "boolean",
           "default": true,
-          "description": "Enable Runtime Safety Guard diagnostics."
+          "description": "Enable Prod Guardian diagnostics."
         },
         "runtimeSafety.severity": {
           "type": "string",
